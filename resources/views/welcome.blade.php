@@ -138,3 +138,233 @@
         </div>
     </body>
 </html>
+
+
+ <style>
+        /* Style de base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero Section avec fond d'image */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Section des offres */
+        .offers-section {
+            padding: 0 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e74c3c;
+            margin: 15px auto 0;
+        }
+        
+         .offers-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .section-title:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #e74c3c;
+        margin: 15px auto 0;
+    }
+    
+    /* Grille des offres */
+    .offers-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 20px 0;
+    }
+    
+    .offer-card {
+        background: #333;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .offer-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .offer-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+    
+    .offer-content {
+        padding: 20px;
+    }
+    
+    .offer-title {
+        font-size: 1.4rem;
+        color:rgb(249, 251, 253);
+        margin-bottom: 10px;
+    }
+    
+    .offer-expiry {
+        display: flex;
+        align-items: center;
+        color: #e74c3c;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .offer-expiry i {
+        margin-right: 8px;
+    }
+    
+    .offer-description {
+        color: #fff;
+        margin-bottom: 20px;
+        height: 80px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    
+    .offer-button {
+        display: inline-block;
+        background: #e74c3c;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+    
+    .offer-button:hover {
+        background: #c0392b;
+        color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .offers-grid-container {
+            grid-template-columns: 1fr;
+        }
+    }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .offers-carousel-button {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .offers-prev {
+                left: -15px;
+            }
+            
+            .offers-next {
+                right: -15px;
+            }
+        }
+            .job-card {
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-container {
+        background-color: #f8f9fa;
+    }
+    
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+    
+    .job-card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--line-clamp, 3);
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .object-fit-cover {
+        object-fit: cover;
+    }
+    
+    .see-more-btn {
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    
+    .see-more-btn:hover {
+        text-decoration: underline;
+    }
+    </style>

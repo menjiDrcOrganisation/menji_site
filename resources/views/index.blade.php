@@ -38,7 +38,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" class="header d-flex align-items-center fixed-top bg-light "> 
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -49,7 +49,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Accueil</a></li>
+          <li><a href="#hero" class="active ">Accueil</a></li>
           <li><a href="">A propos</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Blog</a></li>

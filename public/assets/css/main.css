@@ -250,14 +250,14 @@ h6 {
 
 .header .cta-btn,
 .header .cta-btn:focus {
-  color: var(--contrast-color);
+  color: #000910;
   font-size: 13px;
   padding: 7px 25px;
   margin: 0 0 0 30px;
   border-radius: 4px;
   transition: 0.3s;
   text-transform: uppercase;
-  border: 2px solid var(--contrast-color);
+  border: 2px solid #000910;
 }
 
 .header .cta-btn:hover,
@@ -325,7 +325,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: #000910;
     font-size: 13px;
     padding: 0 2px;
     font-family: var(--nav-font);
@@ -369,7 +369,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: color-mix(in srgb, var(--nav-color) 90%, white 15%);
+    color: #000910;
   }
 
   .navmenu .dropdown ul {
