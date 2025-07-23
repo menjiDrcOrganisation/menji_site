@@ -21,6 +21,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,7 +33,7 @@ Route::middleware('auth')->group(function () {
 });
 // Routes publiques
 Route::get('/blog', [PostController::class, 'create'])->name('blog.index');
-Route::get('/blog/{slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/blog/{post}', [PostController::class, 'show'])->name('blog.show');
 
 Route::get('/post', [PostController::class, 'index'])->name('admin.posts.create');
 Route::post('/post', [PostController::class, 'store'])->name('admin.posts.store');

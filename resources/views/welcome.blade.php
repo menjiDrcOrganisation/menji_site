@@ -139,8 +139,6 @@
     </body>
 </html>
 
-
- <style>
         /* Style de base */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

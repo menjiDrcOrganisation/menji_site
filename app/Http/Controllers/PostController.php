@@ -68,10 +68,20 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    public function show(Post $post)
+{
+    // Récupère l'article avec ses images et compte les vues
+    $post = Post::find($post->id);
+    
+    // Incrémente le compteur de vues
+
+    
+    // Formate les données pour la vue
+    // $post->formatted_date = $post->created_at->format('d/m/Y');
+    // $post->formatted_expiry = $post->expiry_date->format('d/m/Y');
+    
+    return view('blog.show', compact('post'));
+}
 
     /**
      * Show the form for editing the specified resource.

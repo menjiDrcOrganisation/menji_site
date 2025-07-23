@@ -1,297 +1,412 @@
+@extends('layout')
+@section('title', 'Menji Drc - Blog')
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romaelys SARL - Nos Offres d'Emploi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+@section('content')
     <style>
-        /* Style de base */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #f72585;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --success-color: #4cc9f0;
+            --warning-color: #f8961e;
+            --danger-color: #ef233c;
+            --transition-speed: 0.4s;
         }
         
-        /* Hero Section avec fond d'image */
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.7;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section améliorée */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(135deg, rgba(27, 38, 44, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #f8fafc;
+            transform: skewY(-3deg);
+            z-index: 1;
         }
         
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s both;
         }
         
         .hero-description {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
-            margin: 0 auto 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin: 0 auto 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            animation: fadeInUp 1s both 0.3s;
         }
         
         /* Section des offres */
         .offers-section {
-            padding: 0 20px 60px;
-            max-width: 1200px;
+            padding: 80px 20px;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 50px;
             position: relative;
+            font-weight: 700;
         }
         
         .section-title:after {
             content: "";
             display: block;
-            width: 80px;
-            height: 4px;
-            background: #e74c3c;
-            margin: 15px auto 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            margin: 20px auto 0;
+            border-radius: 3px;
+            animation: scaleX 1s both;
         }
         
-         .offers-section {
-        padding: 40px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .section-title {
-        text-align: center;
-        font-size: 2.2rem;
-        color: #2c3e50;
-        margin-bottom: 40px;
-        position: relative;
-    }
-    
-    .section-title:after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: #e74c3c;
-        margin: 15px auto 0;
-    }
-    
-    /* Grille des offres */
-    .offers-grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-        padding: 20px 0;
-    }
-    
-    .offer-card {
-        background: #333;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .offer-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    .offer-image {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
-    
-    .offer-content {
-        padding: 20px;
-    }
-    
-    .offer-title {
-        font-size: 1.4rem;
-        color:rgb(249, 251, 253);
-        margin-bottom: 10px;
-    }
-    
-    .offer-expiry {
-        display: flex;
-        align-items: center;
-        color: #e74c3c;
-        font-weight: 500;
-        margin-bottom: 15px;
-    }
-    
-    .offer-expiry i {
-        margin-right: 8px;
-    }
-    
-    .offer-description {
-        color: #fff;
-        margin-bottom: 20px;
-        height: 80px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-    
-    .offer-button {
-        display: inline-block;
-        background: #e74c3c;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: background 0.3s;
-    }
-    
-    .offer-button:hover {
-        background: #c0392b;
-        color: white;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
+        /* Grille des offres améliorée */
         .offers-grid-container {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
         }
-    }
+        
+        .job-card {
+            border-radius: 12px;
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-speed) ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-img-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .job-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+        
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 200px);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .job-card:hover .card-title {
+            color: var(--primary-color);
+        }
+        
+        .card-text {
+            color: #64748b;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .see-more-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+        }
+        
+        .see-more-btn:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .see-more-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .see-more-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .job-badge {
+            background-color: #e2e8f0;
+            color: #334155;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Animation pour les cartes */
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-card {
+            animation: cardEntrance 0.6s ease-out both;
+        }
+        
+        /* Délai d'animation pour chaque carte */
+        .job-card:nth-child(1) { animation-delay: 0.1s; }
+        .job-card:nth-child(2) { animation-delay: 0.2s; }
+        .job-card:nth-child(3) { animation-delay: 0.3s; }
+        .job-card:nth-child(4) { animation-delay: 0.4s; }
+        .job-card:nth-child(5) { animation-delay: 0.5s; }
+        .job-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Effet de vague en bas */
+        .wave-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+            margin-top: -1px;
+        }
+        
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .offers-grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+                background-attachment: scroll;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
                 font-size: 2rem;
+            }
+            
+            .offers-grid-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
             }
             
             .hero-description {
                 font-size: 1rem;
                 padding: 0 20px;
             }
-            
-            .offers-carousel-button {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .offers-prev {
-                left: -15px;
-            }
-            
-            .offers-next {
-                right: -15px;
-            }
         }
-            .job-card {
-        border-radius: 12px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .job-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .card-img-container {
-        background-color: #f8f9fa;
-    }
-    
-    .transition-all {
-        transition: all 0.3s ease;
-    }
-    
-    .job-card:hover .card-img-top {
-        transform: scale(1.05);
-    }
-    
-    .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: var(--line-clamp, 3);
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    
-    .object-fit-cover {
-        object-fit: cover;
-    }
-    
-    .see-more-btn {
-        text-decoration: none;
-        transition: all 0.2s;
-    }
-    
-    .see-more-btn:hover {
-        text-decoration: underline;
-    }
     </style>
-</head>
-<body>
-  <section class="offers-section" id="offres">
-    <h2 class="section-title">Découvrez nos opportunités</h2>
-    
-        
-        <!-- Liste des offres -->
-        <div class="row g-4">
-    <?php foreach ($posts as $post): ?>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 job-card shadow-sm border-0 overflow-hidden">
-                <!-- Image de l'offre -->
-                @if($post->images->count() > 0)
-                    <div class="card-img-container position-relative overflow-hidden" style="height: 180px;">
-                        <img src="{{ asset('storage/' . $post->images[0]->image_path) }}" 
-                             alt="Illustration de l'article {{ $post->title }}"
-                             class="card-img-top h-100 w-100 object-fit-cover transition-all"
-                             loading="lazy">
-                    </div>
-                @endif
-                
-                <div class="card-body d-flex flex-column">
-                    <div class="mb-2">
-                        <h5 class="card-title fw-bold mb-2 text-truncate">{{ $post->title }}</h5>
-                        <div class="description-container">
-                            <p class="card-text text-muted mb-2 short-description line-clamp-3" style="--line-clamp: 3;">
-                                {!! nl2br(e(Str::limit($post->content, 200))) !!}
-                            </p>
-                        </div>
-                        <a href="{{ route('posts.show', $post->id) }}" class="btn btn-link p-0 text-primary see-more-btn" type="button">
-                            <small>Voir plus</small>
-                        </a>
-                    </div>
-                    
-                    {{-- <div class="mt-auto">
-                        <div class="d-flex justify-content-between align-items-center border-top pt-3">
-                            <div class="d-flex flex-column">
-                                <small class="text-muted">Date limite</small>
-                                <span class="fw-semibold text-danger">
-                                    <?= date('d/m/Y', strtotime($job['expiry_date'])) ?>
-                                </span>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Opportunités professionnelles</h1>
+            <p class="hero-description animate__animated animate__fadeInUp">
+                Découvrez nos offres d'emploi stimulantes et rejoignez une équipe dynamique et passionnée.
+            </p>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers-section" id="offres">
+        <div class="container">
+            <h2 class="section-title">Découvrez nos opportunités</h2>
+            
+            <!-- Liste des offres -->
+            <div class="row g-4">
+                <?php foreach ($posts as $index => $post): ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 job-card shadow-sm border-0 overflow-hidden animate-card">
+                        <!-- Image de l'offre -->
+                        @if($post->images->count() > 0)
+                            <div class="card-img-container position-relative overflow-hidden">
+                                <img src="{{ asset('storage/' . $post->images[0]->image_path) }}" 
+                                     alt="Illustration de l'article {{ $post->title }}"
+                                     class="card-img-top object-fit-cover"
+                                     loading="lazy">
                             </div>
-                            <a href="apply.php?job_id=<?= $job['id'] ?>" 
-                               class="btn btn-primary rounded-pill px-4 py-2">
-                               <i class="bi bi-send-fill me-2"></i>Postuler
-                            </a>
-                        </div>
-                    </div> --}}
+                        @endif
+                        
+                        <div class="card-body d-flex flex-column">
+                            <!-- Badges (optionnel) -->
+                        
+                            <div class="mb-2">
+                                <h5 class="card-title fw-bold mb-2">{{ $post->title }}</h5>
+                                <div class="description-container">
+                                    <p class="card-text text-muted mb-3 short-description line-clamp-3" style="--line-clamp: 3;">
+                                        {!! nl2br(e(Str::limit($post->content, 200))) !!}
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="mt-auto pt-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <div class="d-flex align-items-center gap-3">
+                <div>
+                    <small class="text-muted d-block">Publié le</small>
+                    <span class="fw-semibold text-success">
+                        <?= date('d/m/Y', strtotime($post->created_at)) ?>
+                    </span>
                 </div>
+                <div class="vr"></div>
+                
             </div>
         </div>
-    <?php endforeach; ?>
-</div>
-
+        <a href="{{ route('blog.show', $post->id) }}" class="see-more-btn">
+                                    Voir plus <i class="bi bi-arrow-right"></i>
+                                </a>
     </div>
-</section>  
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Animation avec ScrollReveal
+        ScrollReveal().reveal('.job-card', {
+            delay: 200,
+            distance: '20px',
+            origin: 'bottom',
+            interval: 100,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            reset: true
+        });
+        
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.job-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        // Effet de survol amélioré
+        document.querySelectorAll('.job-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+@endsection
