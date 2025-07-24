@@ -86,18 +86,40 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
+     * style="position: absolute; top: 0; right: 0;"
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request, Post $post)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required',
+        'images.*' => 'image|mimes:jpeg,jpg,png|max:2048',
+    ]);
+
+    $post->update([
+        'title' => $request->title,
+        'content' => $request->content,
+        'slug' => Str::slug($request->title),
+    ]);
+
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $path = $image->store('post_images', 'public');
+            $post->images()->create(['image_path' => $path]);
+        }
+        return redirect()->route('/')->with('success', 'Article mis à jour');
     }
+return redirect()->route('admin.posts.edit', $post->id)->with('success', 'Article mis à jour');
+    
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -106,4 +128,16 @@ class PostController extends Controller
     {
         //
     }
+    public function destroyImage($id)
+{
+    $image = PostImage::findOrFail($id);
+
+    // Supprimer le fichier du disque
+    Storage::disk('public')->delete($image->image_path);
+
+    $image->delete();
+
+    return back()->with('success', 'Image supprimée');
+}
+
 }

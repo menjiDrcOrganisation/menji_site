@@ -17,10 +17,12 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/contact', function () {
-    return view('contact');
-});
-
+Route::get('/conctact', function () {
+    return view('contact'); // Assurez-vous que ce fichier de vue existe
+})->name('contact');
+Route::get('/apropos', function () {
+    return view('apropos'); // Assurez-vous que ce fichier de vue existe
+})->name('apropos');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,10 +39,14 @@ Route::get('/blog/{post}', [PostController::class, 'show'])->name('blog.show');
 
 Route::get('/post', [PostController::class, 'index'])->name('admin.posts.create');
 Route::post('/post', [PostController::class, 'store'])->name('admin.posts.store');
+Route::get('/post/{post}', [PostController::class,'edit'])->name('admin.posts.edit');
+Route::put('/post/{post}', [PostController::class,'update'])->name('admin.posts.update');
+
+Route::delete('/admin/posts/images/{id}', [PostController::class, 'destroyImage'])->name('posts.images.destroy');
 
 // Routes admin protégées
-Route::middleware('auth')->group(function () {
-    Route::resource('admin/posts', PostController::class)->except(['show']);
-});
+// Route::middleware('auth')->group(function () {
+//     Route::resource('admin/posts', PostController::class)->except(['show']);
+// });
 
 require __DIR__.'/auth.php';

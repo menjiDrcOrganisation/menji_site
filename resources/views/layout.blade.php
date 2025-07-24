@@ -52,9 +52,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Accueil</a></li>
-          <li><a href="">A propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Blog</a></li>
+          <li><a href="{{ route('apropos') }}">A propos</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="{{ route('blog.index') }}">Blog</a></li>
           {{-- <li><a href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -73,12 +73,12 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> --}}
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn" href="index.html#about">Se connecter</a>
+      {{-- <a class="cta-btn" href="index.html#about">Se connecter</a> --}}
 
     </div>
   </header>
