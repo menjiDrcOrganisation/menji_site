@@ -26,10 +26,19 @@ class PostController extends Controller
     public function create()
     {
         //
-        $posts = Post::with('images')->paginate(10);
+        $posts = Post::with('images')->latest()->paginate(10);
         // $posts = Post::all();
         #dd(count(Admin::all()));
         return view('blog.index', compact('posts'));
+    }
+
+    public function voir()
+    {
+        //
+        $posts = Post::with('images')->paginate(10);
+        // $posts = Post::all();
+        #dd(count(Admin::all()));
+        return view('admin.posts.voir', compact('posts'));
     }
 
     /**
@@ -62,7 +71,7 @@ class PostController extends Controller
         ]);
     }
 
-    return redirect()->route('posts.index')->with('success', 'Article publié avec sa galerie !');
+    return redirect()->route('blog.index')->with('success', 'Article publié avec sa galerie !');
 }
 
     /**
@@ -114,7 +123,7 @@ class PostController extends Controller
             $path = $image->store('post_images', 'public');
             $post->images()->create(['image_path' => $path]);
         }
-        return redirect()->route('/')->with('success', 'Article mis à jour');
+        return redirect()->route('blog.show')->with('success', 'Article mis à jour');
     }
 return redirect()->route('admin.posts.edit', $post->id)->with('success', 'Article mis à jour');
     
@@ -124,10 +133,21 @@ return redirect()->route('admin.posts.edit', $post->id)->with('success', 'Articl
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+   public function destroy(Post $post)
     {
-        //
+        // Supprime les images associées
+        foreach ($post->images as $image) {
+            Storage::disk('public')->delete($image->image_path);
+            $image->delete();
+        }
+
+        // Supprime l'article
+        $post->delete();
+
+        return redirect()->route('admin.posts.voir')
+            ->with('success', 'Article supprimé avec succès');
     }
+
     public function destroyImage($id)
 {
     $image = PostImage::findOrFail($id);

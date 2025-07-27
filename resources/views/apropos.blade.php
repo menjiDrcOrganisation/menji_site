@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'A Propos')
+@section('title', 'Menji Drc - A Propos')
 
 @section('content')
     <style>

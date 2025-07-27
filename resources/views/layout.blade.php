@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Dewi Bootstrap Template</title>
+  <title>
+    @yield('title')
+  </title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Favicons -->
+  <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="apple-touch-icon"> 
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -51,7 +54,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Accueil</a></li>
+          <li><a href="{{ route('accueil') }}" class="active">Accueil</a></li>
           <li><a href="{{ route('apropos') }}">A propos</a></li>
           <li><a href="">Services</a></li>
           <li><a href="{{ route('blog.index') }}">Blog</a></li>
@@ -89,14 +92,14 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <img src={{ asset('assets/img/Logo_menji.png') }} alt="">
+            <img src={{ asset('assets/img/Logo_menjid.png') }} alt="">
             {{-- <span class="sitename">Dewi</span> --}}
           </a>
           <div class="footer-contact pt-3">
             <p>A108 Adam Street</p>
             <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+243 893 572 418 </span></p>
+            <p><strong>Email:</strong> <span>menjidrc@menjidrc.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>

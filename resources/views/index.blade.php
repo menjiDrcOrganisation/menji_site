@@ -1,85 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
+@section('title', 'Menji Drc - Accueil')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Menji Drc</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="icon">
-  <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Dewi
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top bg-light">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{ asset('assets/img/Logo_menji.png') }}"alt=""> 
-        {{-- <h1 class="sitename">Menjidrc</h1> --}}
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Accueil</a></li>
-          <li><a href="{{ route('apropos') }}">A propos</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="{{ route('blog.index') }}">Blog</a></li>
-          {{-- <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> --}}
-          <li><a href="{{ route('contact') }}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      {{-- <a class="cta-btn" href="index.html#about">Se connecter</a> --}}
-
-    </div>
-  </header>
+@section('content')
 
   <main class="main">
 
@@ -92,7 +14,7 @@
         <h2 data-aos="fade-up" data-aos-delay="100">Bienvenue chez Menji Drc</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nous sommes une équipe passionnée, spécialisée dans le développement de solutions numériques sur mesure pour répondre aux besoins des entreprises modernes. Explorez nos services et découvrez comment nous pouvons vous aider à atteindre vos objectifs.</p>
         <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" class="btn-get-started">Se connecter</a>
+          {{-- <a href="#about" class="btn-get-started">Se connecter</a> --}}
           <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
         </div>
       </div>
@@ -150,7 +72,7 @@
             <div class="stats-item d-flex align-items-center w-100 h-100">
               <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="63" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Clients Satisfaits</p>
               </div>
             </div>
@@ -160,7 +82,7 @@
             <div class="stats-item d-flex align-items-center w-100 h-100">
               <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="91" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Projets</p>
               </div>
             </div>
@@ -170,7 +92,7 @@
             <div class="stats-item d-flex align-items-center w-100 h-100">
               <i class="bi bi-headset color-green flex-shrink-0"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="1013" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Heures de Support</p>
               </div>
             </div>
@@ -180,7 +102,7 @@
             <div class="stats-item d-flex align-items-center w-100 h-100">
               <i class="bi bi-people color-pink flex-shrink-0"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Travailleurs Acharnés</p>
               </div>
             </div>
@@ -198,7 +120,7 @@
       <!-- Section Title -->
       <div class="container section-title text-center" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Nos Services Phares</p>
+          <p>Découvrez nos services sur mesure</p>
       </div>  
       {{-- !-- End Section Title --> --}}
 
@@ -209,7 +131,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/Design.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -219,6 +141,7 @@
                   <h3>Développement Web </h3>
                 </a>
                 <p>Nous créons des sites web dynamiques et performants, adaptés à votre entreprise. Que ce soit pour un site vitrine, une plateforme e-commerce ou une application web complexe, nous avons l'expertise pour vous accompagner.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -226,7 +149,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/numérique.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -236,6 +159,7 @@
                   <h3>Développement Mobile</h3>
                 </a>
                 <p>Nous concevons des applications mobiles innovantes et intuitives pour vous aider à atteindre vos utilisateurs sur tous les appareils. De l'idée à la mise en ligne, nous vous guidons à chaque étape.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -243,7 +167,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -253,6 +177,7 @@
                   <h3>Marketing Digital</h3>
                 </a>
                 <p>Boostez la visibilité de votre entreprise grâce à nos stratégies de marketing digital. SEO, publicité en ligne, gestion de réseaux sociaux... Nous vous aidons à atteindre les bonnes personnes, au bon moment.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -260,7 +185,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/Voici.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -270,6 +195,7 @@
                   <h3>Gestion de Projet IT</h3>
                 </a>
                 <p>Vous avez un projet numérique en tête ? Nous vous accompagnons dans sa réalisation, en vous offrant un soutien complet à chaque étape : analyse des besoins, planification, développement et suivi.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -277,7 +203,7 @@
            <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/Vie.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -287,6 +213,7 @@
                   <h3>Sécurité informatique </h3>
                 </a>
                 <p>Audit, mise en place de systèmes de surveillance, cybersécurité, protection des données et infrastructures.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -294,7 +221,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/What.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -304,6 +231,7 @@
                   <h3>Cloud Computing</h3>
                 </a>
                 <p>Solutions d'hébergement, migration vers le cloud, gestion des serveurs et services Saas.</p>
+                <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -311,7 +239,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/d6fc5bad-4c89-4732-bdfb-5546e5e3171e.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -321,6 +249,7 @@
                   <h3>UI/UX Design</h3>
                 </a>
                 <p>Conception de marquettes interactives, prototypage(Figma, Adobe XD), expérience utilisateur fluide.</p>
+              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -328,7 +257,7 @@
           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/29a56d50-8232-4bfe-8fb7-0634fd985495.jpeg" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
@@ -338,6 +267,7 @@
                   <h3>Graphisme & Communication</h3>
                 </a>
                 <p>Création de logos, affiches, flyers, chartes graphiques, design de marque.</p>
+                <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -561,70 +491,10 @@
                 <span class="visually-hidden">Suivant</span>
             </button>
         </div>
-        
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <button class="btn btn-primary btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#newsletterModal">
-                    <i class="bi bi-envelope me-2"></i> S'abonner à notre newsletter
-                </button>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- Modal Newsletter -->
-<div class="modal fade newsletter-modal" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newsletterModalLabel">Restez informé</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="newsletterForm">
-                    <div class="mb-4">
-                        <p>Abonnez-vous pour recevoir nos derniers articles et offres exclusives directement dans votre boîte mail.</p>
-                    </div>
-                    <div class="mb-3">
-                        <label for="emailInput" class="form-label">Votre adresse email</label>
-                        <input type="email" class="form-control py-3" id="emailInput" placeholder="votre@email.com" required>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" id="consentCheck" required>
-                        <label class="form-check-label" for="consentCheck">
-                            J'accepte de recevoir des emails de Menji DRC
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 py-3">S'abonner</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Gestion de la soumission du formulaire
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Récupération de l'email
-        const email = document.getElementById('emailInput').value;
-        
-        // Ici vous ajouteriez votre logique d'envoi (AJAX, etc.)
-        console.log('Email à enregistrer:', email);
-        
-        // Feedback à l'utilisateur
-        alert('Merci pour votre abonnement ! Vous recevrez bientôt nos actualités.');
-        
-        // Fermeture de la modal
-        const modal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
-        modal.hide();
-        
-        // Réinitialisation du formulaire
-        this.reset();
-    });
-</script>
 <!-- /Features Section -->
 
     <!-- Services 2 Section -->
@@ -632,7 +502,7 @@
   <div class="container">
     <div class="section-header" data-aos="fade-up">
       <h2>Pourquoi Menji ?</h2>
-      <p>Notre valeur ajoutée</p>
+      {{-- <p>Notre valeur ajoutée</p> --}}
     </div>
 
     <div class="row justify-content-center">
@@ -1206,100 +1076,4 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src={{ asset('assets/img/Logo_menji.png') }} alt="">
-            {{-- <span class="sitename">Dewi</span> --}}
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Menu</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">A propos</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Blog</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-    <h4>Nos Services</h4>
-    <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Mobile</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Web</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">UI/UX Design</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Sécurité Informatique</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Cloud Computing</a></li>
-    </ul>
-</div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-    <h4>Notre Newsletter</h4>
-    <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités sur nos produits et services !</p>
-    <form action="forms/newsletter.php" method="post" class="php-email-form">
-        <div class="newsletter-form">
-            <input type="email" name="email" placeholder="Votre email">
-            <input type="submit" value="S'abonner">
-        </div>
-        <div class="loading">Envoi en cours...</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Votre demande d'abonnement a bien été envoyée. Merci !</div>
-    </form>
-</div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Menji Drc</strong> <span>Tous droits réservés.</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+@endsection

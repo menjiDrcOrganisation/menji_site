@@ -16,7 +16,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('accueil');;
 Route::get('/conctact', function () {
     return view('contact'); // Assurez-vous que ce fichier de vue existe
 })->name('contact');
@@ -41,8 +41,9 @@ Route::get('/post', [PostController::class, 'index'])->name('admin.posts.create'
 Route::post('/post', [PostController::class, 'store'])->name('admin.posts.store');
 Route::get('/post/{post}', [PostController::class,'edit'])->name('admin.posts.edit');
 Route::put('/post/{post}', [PostController::class,'update'])->name('admin.posts.update');
-
+Route::get('/voir', [PostController::class, 'voir'])->name('admin.posts.voir');
 Route::delete('/admin/posts/images/{id}', [PostController::class, 'destroyImage'])->name('posts.images.destroy');
+Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 // Routes admin protégées
 // Route::middleware('auth')->group(function () {
