@@ -6,7 +6,7 @@
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
-            --accent-color: #e74c3c;
+            --accent-color: #f48915;
             --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
         }
@@ -15,18 +15,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.6;
-        }
-        
-        .hero-section {
-            background: 
-                linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(26, 26, 46, 0.9)),
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 150px 0;
-            position: relative;
-            text-align: center;
         }
         
         .hero-section .container {
@@ -123,7 +111,12 @@
         .img-container:hover {
             transform: scale(1.02);
         }
-        
+        .haut{
+            padding-top: 100px;
+            margin: 0 auto;
+            text-align: center;
+
+        }
         @media (max-width: 768px) {
             .hero-section {
                 padding: 100px 0;
@@ -133,21 +126,83 @@
                 font-size: 2.5rem;
             }
         }
+
+
+
+           .team-carousel {
+        position: relative;
+    }
+    
+    .team-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .team-img-container {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .team-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 5px solid #f8f9fa;
+        border-radius: 50%;
+    }
+    
+    .team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: #f8f9fa;
+        color: var(--primary-color);
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .team-social a:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: auto;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 60%;
+    }
+    
+    @media (max-width: 768px) {
+        .team-img-container {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .team-card {
+            padding: 20px;
+        }
+    }
     </style>
 
     <!-- Hero Section avec image de fond -->
     <section class="hero-section">
-        <div class="container">
+        <div class="container haut">
             <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Qui sommes-nous ?</h1>
             <p class="lead fs-4 animate__animated animate__fadeInUp">Menji DRC - Innovation Technologique au Cœur de l'Afrique</p>
-            {{-- <div class="d-flex justify-content-center mt-4 animate__animated animate__fadeInUp animate__delay-1s">
-                <a href="#about" class="btn btn-primary btn-lg px-4 me-3">
-                    <i class="bi bi-arrow-down-circle me-2"></i> Découvrir
-                </a>
-                <a href="#contact" class="btn btn-outline-light btn-lg px-4">
-                    <i class="bi bi-chat-dots me-2"></i> Nous contacter
-                </a>
-            </div> --}}
         </div>
     </section>
 
@@ -163,24 +218,12 @@
                 </div>
                 <div class="col-lg-6">
                     <h2 class="fw-bold mb-4">Notre Histoire</h2>
-                    <p class="lead text-primary">Des solutions digitales sur mesure pour l'Afrique et au-delà</p>
-                    <p>Fondée en 2020 par des experts en technologie digitale, Menji DRC est née de la passion pour l'innovation et la transformation numérique en République Démocratique du Congo.</p>
+                    <p class="lead ico">Des solutions digitales sur mesure pour l'Afrique et au-delà</p>
+                    <p>Fondée en 2021 par des experts en technologie digitale, Menji DRC est née de la passion pour l'innovation et la transformation numérique en République Démocratique du Congo.</p>
                     <p>Nous combinons expertise technique et créativité pour offrir des solutions sur mesure qui répondent aux défis spécifiques du marché africain tout en répondant aux standards internationaux.</p>
-                    {{-- <div class="d-flex align-items-center mt-4">
-                        <div class="me-4">
-                            <h3 class="text-accent mb-0">50+</h3>
-                            <p class="text-muted mb-0">Projets réalisés</p>
-                        </div>
-                        <div class="me-4">
-                            <h3 class="text-accent mb-0">15+</h3>
-                            <p class="text-muted mb-0">Clients satisfaits</p>
-                        </div>
-                        <div>
-                            <h3 class="text-accent mb-0">100%</h3>
-                            <p class="text-muted mb-0">Engagement qualité</p>
-                        </div>
-                    </div> --}}
-                </div>
+                    <p>Notre équipe est composée de professionnels passionnés, engagés à fournir des services de haute qualité dans les domaines du développement web, mobile, cloud computing et cybersécurité.</p>
+                    <p>Nous croyons fermement que la technologie peut être un levier puissant pour le développement économique et social de l'Afrique. C'est pourquoi nous nous engageons à accompagner les entreprises et les institutions dans leur transformation digitale, en mettant l'accent sur la sécurité, l'innovation et la proximité avec nos clients.</p>
+                    </div>
             </div>
         </div>
     </section>
@@ -195,7 +238,7 @@
             
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="mission-vision-box">
+                    <div class="value-card text-center p-4">
                         <i class="bi bi-bullseye value-icon"></i>
                         <h3 class="fw-bold">Notre Mission</h3>
                         <p class="fs-5">Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
@@ -209,7 +252,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="mission-vision-box">
+                    <div class="value-card text-center p-4">
                         <i class="bi bi-eye value-icon"></i>
                         <h3 class="fw-bold">Notre Vision</h3>
                         <p class="fs-5">Devenir une référence africaine dans l'innovation technologique.</p>
@@ -403,87 +446,8 @@
             </div>
         </div>
 
-        <!-- CTA -->
-        <div class="text-center mt-5">
-            <a href="#contact" class="btn btn-primary btn-lg px-4 me-2">
-                <i class="bi bi-people me-2"></i> Rencontrer l'équipe
-            </a>
-            <a href="/about" class="btn btn-outline-primary btn-lg px-4">
-                <i class="bi bi-info-circle me-2"></i> Notre histoire
-            </a>
-        </div>
     </div>
 </section>
-
-<style>
-    .team-carousel {
-        position: relative;
-    }
-    
-    .team-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    .team-img-container {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .team-img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 5px solid #f8f9fa;
-        border-radius: 50%;
-    }
-    
-    .team-social a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background: #f8f9fa;
-        color: var(--primary-color);
-        border-radius: 50%;
-        margin: 0 5px;
-        transition: all 0.3s ease;
-    }
-    
-    .team-social a:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-3px);
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: auto;
-    }
-    
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-size: 60%;
-    }
-    
-    @media (max-width: 768px) {
-        .team-img-container {
-            width: 150px;
-            height: 150px;
-        }
-        
-        .team-card {
-            padding: 20px;
-        }
-    }
-</style>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
