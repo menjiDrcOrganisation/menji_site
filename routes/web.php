@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/conctact', function () {
     return view('contact'); // Assurez-vous que ce fichier de vue existe
 })->name('contact');
+Route::post('/contact', [PostController::class, 'submit'])->name('contact.submit');
 Route::get('/apropos', function () {
     return view('apropos'); // Assurez-vous que ce fichier de vue existe
 })->name('apropos');

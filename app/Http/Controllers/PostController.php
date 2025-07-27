@@ -8,6 +8,8 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Models\PostImage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class PostController extends Controller
 {
@@ -160,4 +162,23 @@ return redirect()->route('admin.posts.edit', $post->id)->with('success', 'Articl
     return back()->with('success', 'Image supprimée');
 }
 
+public function submit(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'subject' => 'nullable|string|max:255',
+            'service' => 'required|string|max:255',
+            'message' => 'required|string|min:10',
+            'consent' => 'required|accepted'
+        ]);
+
+        // Envoi de l'email
+        Mail::to(config('mail.contact_address'))->send(new ContactFormMail($validated));
+
+        return redirect()->route('contact')
+            ->with('success', 'Merci pour votre message! Nous vous contacterons dans les plus brefs délais.');
+    }
+
 }
+ 
