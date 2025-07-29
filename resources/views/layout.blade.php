@@ -32,16 +32,9 @@
   <!-- Main CSS File -->
   <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Dewi
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
-<body class="index-page">
+<body>
 
   <header id="header" class="header d-flex align-items-center fixed-top bg-light">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -56,7 +49,7 @@
         <ul>
           <li><a href="{{ route('accueil') }}" class="active">Accueil</a></li>
           <li><a href="{{ route('apropos') }}">A propos</a></li>
-          <li><a href="">Services</a></li>
+          <li><a href=" ">Services</a></li>
           <li><a href="{{ route('blog.index') }}">Blog</a></li>
           {{-- <li><a href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
