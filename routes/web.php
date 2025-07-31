@@ -54,24 +54,24 @@ Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('admin.p
 // });
 
 
-Route::get('/test-email', function () {
-    Mail::to('manimamarien08@gmail.com')
-        ->send(new TestMail("Ceci est un message de test Laravel."));
-    return 'Email envoyé avec succès !';
-});
+// Route::get('/test-email', function () {
+//     Mail::to('manimamarien08@gmail.com')
+//         ->send(new TestMail("Ceci est un message de test Laravel."));
+//     return 'Email envoyé avec succès !';
+// });
 
-Route::get('/send-email', function () {
-    $data = [
-        'email' => 'manimamarien08@gmail.com',  // ← L'expéditeur réel (ex: le client)
-        'nom' => 'marien',
-        'message' => 'Bonjour, ceci est un test avec replyTo().'
-    ];
+// Route::get('/send-email', function () {
+//     $data = [
+//         'email' => 'manimamarien08@gmail.com',  // ← L'expéditeur réel (ex: le client)
+//         'nom' => 'marien',
+//         'message' => 'Bonjour, ceci est un test avec replyTo().'
+//     ];
 
-    Mail::to('menjidrc@menjidrc.com')  
-        ->send((new Replay($data))->replyTo($data['email'], $data['nom']));
+//     Mail::to('menjidrc@menjidrc.com')  
+//         ->send((new Replay($data))->replyTo($data['email'], $data['nom']));
 
-    return "E-mail de test envoyé avec succès.";
-});
+//     return "E-mail de test envoyé avec succès.";
+// });
 
 
 require __DIR__.'/auth.php';

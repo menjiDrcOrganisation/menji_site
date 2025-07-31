@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\PostImage;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormMail;
+use App\Mail\ContactMail;
 
 class PostController extends Controller
 {
@@ -174,7 +175,7 @@ public function submit(Request $request)
         ]);
 
         // Envoi de l'email
-        Mail::to(config('mail.contact_address'))->send(new ContactFormMail($validated));
+        Mail::send(new ContactMail($validated));
 
         return redirect()->route('contact')
             ->with('success', 'Merci pour votre message! Nous vous contacterons dans les plus brefs délais.');
