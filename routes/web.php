@@ -54,11 +54,7 @@ Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('admin.p
 // });
 
 
-Route::get('/test-email', function () {
-    Mail::to('manimamarien08@gmail.com')
-        ->send(new TestMail("Ceci est un message de test Laravel."));
-    return 'Email envoyé avec succès !';
-});
+
 
 Route::get('/send-email', function () {
     $data = [

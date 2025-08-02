@@ -19,7 +19,7 @@ class Replay extends Mailable
 
     public function build()
     {
-        return $this->from(env('MAIL_FROM_ADDRESS'), 'MENJI Contact')
+        return $this->from(env('MAIL_FROM_ADDRESS'), 'Menji site')
                     ->subject('Nouveau message de contact')
                     ->view('email.test')
                     ->with('data', $this->data);
