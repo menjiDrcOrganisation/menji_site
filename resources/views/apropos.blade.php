@@ -229,7 +229,7 @@
     </section>
 
     <!-- Mission & Vision -->
-    <section class="py-5 bg-light">
+    {{-- <section class="py-5 bg-light">
         <div class="container py-5">
             <div class="section-titles text-center">
                 <h2>Notre ADN</h2>
@@ -265,10 +265,102 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
+<section id="services" class="services section pourquoi-menji-section bg-border">
+
+      <!-- Section Title -->
+      <div class="container section-title text-center" data-aos="fade-up">
+          <h2>Notre ADN</h2>
+          <p class="lead">Ce qui nous motive et nous guide au quotidien</p> 
+      </div>  
+      {{-- !-- End Section Title --> --}}
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-bullseye"></i>
+                </div>
+                  <h3  class="stretched-link">Notre Mission</h3>
+                  <p >Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
+                        <p>Nous nous engageons à fournir des produits qui allient performance technique et design exceptionnel, tout en respectant les délais et budgets impartis.</p>
+                        {{-- <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Solutions personnalisées</li>
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Approche centrée utilisateur</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i> Sécurité intégrée dès la conception</li>
+                        </ul> --}}
+                </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-eye"></i>
+                </div>
+                  <h3  class="stretched-link">Notre Vision</h3>
+                <p >Devenir une référence africaine dans l'innovation technologique.</p>
+                        <p>Nous aspirons à être les pionniers de la tech en RDC et dans toute l'Afrique, en mettant l'intelligence et la créativité au service de la transformation numérique du continent.</p>
+              <br>
+                    </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-bullseye"></i>
+                </div>
+                  <h3  class="stretched-link">Notre Mission</h3>
+                  <p >Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
+                        <p>Nous nous engageons à fournir des produits qui allient performance technique et design exceptionnel, tout en respectant les délais et budgets impartis.</p>
+                        {{-- <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Solutions personnalisées</li>
+                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Approche centrée utilisateur</li>
+                            <li><i class="bi bi-check-circle text-success me-2"></i> Sécurité intégrée dès la conception</li>
+                        </ul> --}}
+                </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-eye"></i>
+                </div>
+                  <h3  class="stretched-link">Notre Vision</h3>
+                <p >Devenir une référence africaine dans l'innovation technologique.</p>
+                        <p>Nous aspirons à être les pionniers de la tech en RDC et dans toute l'Afrique, en mettant l'intelligence et la créativité au service de la transformation numérique du continent.</p>
+              <br>
+                    </div>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+
+      </div>
+
+</section>
     <!-- Our Values -->
-    <section class="py-5">
+    {{-- <section class="py-5">
         <div class="container py-5">
             <div class="section-titles text-center">
                 <h2>Nos Valeurs Fondamentales</h2>
@@ -322,7 +414,85 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+    <section id="services" class="services section pourquoi-menji-section bg-border">
+
+      <!-- Section Title -->
+      <div class="container section-title text-center" data-aos="fade-up">
+          <h2>Nos Valeurs Fondamentales</h2>
+          <p class="lead">Les principes qui guident chacune de nos actions</p> 
+      </div>  
+      {{-- !-- End Section Title --> --}}
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+                  <h3  class="stretched-link">Sécurité</h3>
+                  <p>Nous priorisons la protection des données et systèmes de nos clients à chaque étape de nos développements, avec des protocoles rigoureux.</p>
+                </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+                  <h3  class="stretched-link">Créativité</h3>
+                <p>Nous repoussons les limites conventionnelles pour offrir des solutions uniques et innovantes, adaptées aux contextes locaux.</p>
+                </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-cpu"></i>
+                </div>
+                  <h3  class="stretched-link">Innovation</h3>
+                  <p>Adoption des technologies émergentes pour des solutions à la pointe du progrès, tout en restant accessibles.</p>
+                    </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-award"></i>
+                </div>
+                  <h3  class="stretched-link">Professionnalisme</h3>
+                <p>Exigence de qualité, respect des délais et éthique professionnelle irréprochable dans toutes nos interventions.</p>
+                    <br>
+            </div>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+
+      </div>
+
+</section> 
 
     <!-- Team CTA -->
    <section class="team-carousel py-5 bg-light">

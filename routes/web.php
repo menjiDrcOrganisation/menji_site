@@ -56,18 +56,18 @@ Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('admin.p
 
 
 
-Route::get('/send-email', function () {
-    $data = [
-        'email' => 'manimamarien08@gmail.com',  // ← L'expéditeur réel (ex: le client)
-        'nom' => 'marien',
-        'message' => 'Bonjour, ceci est un test avec replyTo().'
-    ];
+// Route::get('/send-email', function () {
+//     $data = [
+//         'email' => 'manimamarien08@gmail.com',  // ← L'expéditeur réel (ex: le client)
+//         'nom' => 'marien',
+//         'message' => 'Bonjour, ceci est un test avec replyTo().'
+//     ];
 
-    Mail::to('menjidrc@menjidrc.com')  
-        ->send((new Replay($data))->replyTo($data['email'], $data['nom']));
+//     Mail::to('menjidrc@menjidrc.com')  
+//         ->send((new Replay($data))->replyTo($data['email'], $data['nom']));
 
-    return "E-mail de test envoyé avec succès.";
-});
+//     return "E-mail de test envoyé avec succès.";
+// });
 
 
 require __DIR__.'/auth.php';

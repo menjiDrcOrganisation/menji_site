@@ -874,7 +874,7 @@ section,
   }
 
   .section-title h2 {
-    font-size: 14px;
+    font-size: 30px;
     font-weight: 500;
     padding: 0;
     line-height: 1px;
@@ -900,7 +900,7 @@ section,
   .section-title p {
     color: var(--heading-color);
     margin: 15px 0 0;
-    font-size: 36px;
+    font-size: 18px;
     font-weight: 800;
     text-transform: uppercase;
     font-family: var(--heading-font);
@@ -1102,6 +1102,12 @@ section,
   border-radius: 8px;
   overflow: hidden;
   height: 200px;
+}
+
+.pourquoi-menji-section .img {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100px;
 }
 
 .services .img img {

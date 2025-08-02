@@ -15,7 +15,7 @@
         <p data-aos="fade-up" data-aos-delay="200">Nous sommes une équipe passionnée, spécialisée dans le développement de solutions numériques sur mesure pour répondre aux besoins des entreprises modernes. Explorez nos services et découvrez comment nous pouvons vous aider à atteindre vos objectifs.</p>
         <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
           {{-- <a href="#about" class="btn-get-started">Se connecter</a> --}}
-          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>voir Video</span></a>
         </div>
       </div>
 
@@ -159,7 +159,8 @@
                   <h3>Développement Mobile</h3>
                 </a>
                 <p>Nous concevons des applications mobiles innovantes et intuitives pour vous aider à atteindre vos utilisateurs sur tous les appareils. De l'idée à la mise en ligne, nous vous guidons à chaque étape.</p>
-              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
+              <br>
+                <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -177,7 +178,8 @@
                   <h3>Marketing Digital</h3>
                 </a>
                 <p>Boostez la visibilité de votre entreprise grâce à nos stratégies de marketing digital. SEO, publicité en ligne, gestion de réseaux sociaux... Nous vous aidons à atteindre les bonnes personnes, au bon moment.</p>
-              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
+              <br><br>
+                <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -195,7 +197,8 @@
                   <h3>Gestion de Projet IT</h3>
                 </a>
                 <p>Vous avez un projet numérique en tête ? Nous vous accompagnons dans sa réalisation, en vous offrant un soutien complet à chaque étape : analyse des besoins, planification, développement et suivi.</p>
-              <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
+              <br>
+                <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -266,7 +269,7 @@
                 <a href="service-details.html" class="stretched-link">
                   <h3>Graphisme & Communication</h3>
                 </a>
-                <p>Création de logos, affiches, flyers, chartes graphiques, design de marque.</p>
+                <p>Création de logos, affiches, flyers, chartes graphiques, design de marque.</p><br>
                 <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
@@ -498,14 +501,15 @@
 <!-- /Features Section -->
 
     <!-- Services 2 Section -->
-    <section id="pourquoi-menji" class="pourquoi-menji-section">
+{{-- <section id="pourquoi-menji" class="pourquoi-menji-section">
   <div class="container">
     <div class="section-header" data-aos="fade-up">
       <h2>Pourquoi Menji ?</h2>
-      {{-- <p>Notre valeur ajoutée</p> --}}
+   
     </div>
 
     <div class="row justify-content-center">
+      
       <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="avantage-box">
           <div class="icon">
@@ -547,96 +551,86 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
-<style>
-  .pourquoi-menji-section {
-    padding: 100px 0;
-    background-color: #f8f9fa;
-  }
+<section id="services" class="services section pourquoi-menji-section">
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
+      <!-- Section Title -->
+      <div class="container section-title text-center" data-aos="fade-up">
+          <h2>Pourquoi Menji ?</h2>
+      </div>  
+      {{-- !-- End Section Title --> --}}
 
-  .section-header h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #2a2a2a;
-    margin-bottom: 15px;
-  }
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-  .section-header p {
-    font-size: 18px;
-    color: #6c757d;
-    position: relative;
-    display: inline-block;
-  }
+        <div class="row">
 
-  .section-header p::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background: var(--accent-color);
-    bottom: -10px;
-    left: 25%;
-  }
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Design.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+                <h3 class="stretched-link" >Expertise en sécurité informatique </h3>
+                <p>Des solutions de cybersécurité robustes pour protéger votre entreprise</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
 
-  .avantage-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    height: 100%;
-    transition: transform 0.3s ease;
-    text-align: center;
-  }
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/numérique.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-gear"></i>
+                </div>
+                  <h3  class="stretched-link">Solutions sur mesure</h3>
+                <p>Des services personnalisés adaptés à vos besoins spécifiques</p><br>
 
-  .avantage-box:hover {
-    transform: translateY(-10px);
-  }
+              </div>
+            </div>
+          </div><!-- End Service Item -->
 
-  .avantage-box .icon {
-    font-size: 40px;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-  }
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+                  <h3  class="stretched-link">Équipe jeune & créative</h3>
+                  <p>Une approche innovante et des idées fraîches pour vos projets</p><br>
+                </div>
+            </div>
+          </div><!-- End Service Item -->
 
-  .avantage-box h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #2a2a2a;
-  }
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-globe"></i>
+                </div>
+                  <h3  class="stretched-link">Présence locale & vision globale</h3>
+                <p>Proche de vous avec une expertise internationale</p><br><br>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
 
-  .avantage-box p {
-    font-size: 15px;
-    color: #6c757d;
-    line-height: 1.6;
-  }
+        </div>
 
-  @media (max-width: 992px) {
-    .pourquoi-menji-section {
-      padding: 80px 0;
-    }
-    
-    .avantage-box {
-      margin-bottom: 30px;
-    }
-  }
+      </div>
 
-  @media (max-width: 768px) {
-    .section-header h2 {
-      font-size: 28px;
-    }
-    
-    .section-header p {
-      font-size: 16px;
-    }
-  }
-</style>
+  </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
