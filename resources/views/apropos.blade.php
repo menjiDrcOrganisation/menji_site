@@ -267,7 +267,7 @@
         </div>
     </section> --}}
 
-<section id="services" class="services section pourquoi-menji-section bg-border">
+<section id="services" class="services section pourquoi-menji-section bg-border pourquoi-menji-sections">
 
       <!-- Section Title -->
       <div class="container section-title text-center" data-aos="fade-up">
@@ -279,7 +279,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row">
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
@@ -300,7 +300,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
@@ -317,7 +317,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
@@ -338,7 +338,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
@@ -416,7 +416,7 @@
         </div>
     </section> --}}
 
-    <section id="services" class="services section pourquoi-menji-section bg-border">
+    <section id="services" class="services section pourquoi-menji-section pourquoi-menji-sections bg-border">
 
       <!-- Section Title -->
       <div class="container section-title text-center" data-aos="fade-up">
@@ -428,7 +428,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row">
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
@@ -443,7 +443,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
@@ -458,7 +458,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
@@ -473,7 +473,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
@@ -495,7 +495,7 @@
 </section> 
 
     <!-- Team CTA -->
-   <section class="team-carousel py-5 bg-light">
+   <section class="team-carousel py-5 bg-light pourquoi-menji-sections">
     <div class="container py-5">
         <div class="section-title text-center mb-5">
             <h2>Notre Équipe d'Experts</h2>

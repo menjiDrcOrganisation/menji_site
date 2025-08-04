@@ -1206,6 +1206,21 @@ section,
   .clients .client-logo img {
     padding: 20px;
   }
+  .pourquoi-menji-section h2{
+    font-size: 20px;
+  }
+  .pn{
+    margin-top: 50px;
+  }
+  .pourquoi-menji-sections h2{
+    font-size: 10px;
+  }
+  .pourquoi-menji-sectionT h2{
+    font-size: 10px;
+  }
+  .pourquoi-menji-sectionT p{
+    font-size: 10px;
+  }
 }
 
 /*--------------------------------------------------------------

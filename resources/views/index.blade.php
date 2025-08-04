@@ -565,7 +565,7 @@
 
         <div class="row">
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Design.jpeg" class="img-fluid" alt=""> --}}
@@ -580,7 +580,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/numérique.jpeg" class="img-fluid" alt=""> --}}
@@ -596,7 +596,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
@@ -611,7 +611,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}

@@ -89,8 +89,8 @@
             {{-- <span class="sitename">Dewi</span> --}}
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
+            {{-- <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p> --}}
             <p class="mt-3"><strong>Phone:</strong> <span>+243 893 572 418 </span></p>
             <p><strong>Email:</strong> <span>menjidrc@menjidrc.com</span></p>
           </div>
@@ -105,11 +105,11 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Menu</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">A propos</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('accueil') }}">Accueil</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('apropos') }}">A propos</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Blog</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Contact</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('blog.index') }}">Blog</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('contact') }}">Contact</a></li>
           </ul>
         </div>
 
