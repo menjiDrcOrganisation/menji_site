@@ -128,7 +128,7 @@
 
         <div class="row gy-5">
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/Design.jpeg" class="img-fluid" alt="">
@@ -146,7 +146,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/numérique.jpeg" class="img-fluid" alt="">
@@ -165,7 +165,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt="">
@@ -184,7 +184,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/Voici.jpeg" class="img-fluid" alt="">
@@ -203,7 +203,7 @@
             </div>
           </div><!-- End Service Item -->
 
-           <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/Vie.jpeg" class="img-fluid" alt="">
@@ -221,7 +221,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/What.jpeg" class="img-fluid" alt="">
@@ -239,7 +239,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/d6fc5bad-4c89-4732-bdfb-5546e5e3171e.jpeg" class="img-fluid" alt="">
@@ -257,7 +257,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/29a56d50-8232-4bfe-8fb7-0634fd985495.jpeg" class="img-fluid" alt="">
@@ -271,6 +271,24 @@
                 </a>
                 <p>Création de logos, affiches, flyers, chartes graphiques, design de marque.</p><br>
                 <a href="#" class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/29a56d50-8232-4bfe-8fb7-0634fd985495.jpeg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-palette-fill"></i>
+                </div>
+                <a href="{{route('demande')}}" class="stretched-link">
+                  <h3>Kimia Ticket</h3>
+                </a>
+                <p>Création de logos, affiches, flyers, chartes graphiques, design de marque.</p><br>
+                <a href="{{route('demande')}} " class="btn btn-sm ico "><i class="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div><!-- End Service Item -->

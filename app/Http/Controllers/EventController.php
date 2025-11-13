@@ -2,38 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
-use App\Models\Event; // Assure-toi que le modèle Event existe
 
 class EventController extends Controller
 {
     public function store(Request $request)
     {
-        // Validation des champs
+        // Validation des données
         $validated = $request->validate([
-            'type_evenement' => 'required|string',
-            // 'organisateur' => 'required|string',
-            'activite' => 'required|string',
-            'description' => 'nullable|string',
-            'email' => 'required|email',
-            // 'phone' => 'required|string',
-            'image' => 'nullable|image|max:2048', // max 2Mo
+            'nom_evenement' => 'required|string|max:255',
+            'contact_organisateur' => 'required|string|max:255',
+            'description' => 'required|string',
+            'type_evenement' => 'required|string|max:255',
+            'affiche' => 'nullable|image|max:2048',
         ]);
 
-        // Gérer l'image si elle existe
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('events', 'public');
-            $validated['image'] = $path;
+        // Gestion de l'upload de l'affiche
+        if ($request->hasFile('affiche')) {
+            $path = $request->file('affiche')->store('affiches', 'public');
+            $validated['affiche'] = $path;
         }
 
-        // Créer l'événement
+        // Création de l'événement (le statut est géré par le modèle)
         $event = Event::create($validated);
 
-        // Retourner une réponse JSON
         return response()->json([
             'success' => true,
+            'message' => 'Demande d\'événement créée avec succès',
             'data' => $event
-        ]);
+        ], 201);
     }
 }
-

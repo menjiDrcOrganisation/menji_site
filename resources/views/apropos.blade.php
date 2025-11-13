@@ -494,8 +494,9 @@
 
 </section> 
 
+
     <!-- Team CTA -->
-   <section class="team-carousel py-5 bg-light pourquoi-menji-sections">
+   <!-- <section class="team-carousel py-5 bg-light pourquoi-menji-sections">
     <div class="container py-5">
         <div class="section-title text-center mb-5">
             <h2>Notre Équipe d'Experts</h2>
@@ -503,12 +504,12 @@
         </div>
 
         <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner"> -->
                 <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
+                <!-- <div class="carousel-item active">
+                    <div class="row justify-content-center"> -->
                         <!-- Membre 1 -->
-                        <div class="col-lg-4">
+                        <!-- <div class="col-lg-4">
                             <div class="team-card text-center mx-auto">
                                 <div class="team-img-container">
                                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
@@ -525,13 +526,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
+                <!-- <div class="carousel-item">
+                    <div class="row justify-content-center"> -->
                         <!-- Membre 2 -->
-                        <div class="col-lg-4">
+                        <!-- <div class="col-lg-4">
                             <div class="team-card text-center mx-auto">
                                 <div class="team-img-container">
                                     <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
@@ -548,13 +549,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
+                <!-- <div class="carousel-item">
+                    <div class="row justify-content-center"> -->
                         <!-- Membre 3 -->
-                        <div class="col-lg-4">
+                        <!-- <div class="col-lg-4">
                             <div class="team-card text-center mx-auto">
                                 <div class="team-img-container">
                                     <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
@@ -571,13 +572,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Slide 4 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
+                <!-- <div class="carousel-item">
+                    <div class="row justify-content-center"> -->
                         <!-- Membre 4 -->
-                        <div class="col-lg-4">
+                        <!-- <div class="col-lg-4">
                             <div class="team-card text-center mx-auto">
                                 <div class="team-img-container">
                                     <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
@@ -595,26 +596,26 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Contrôles du carrousel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
                 <span class="visually-hidden">Précédent</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
                 <span class="visually-hidden">Suivant</span>
-            </button>
+            </button> -->
 
             <!-- Indicateurs -->
-            <div class="carousel-indicators position-relative mt-4">
+            <!-- <div class="carousel-indicators position-relative mt-4">
                 <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true"></button>
                 <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" class="bg-primary"></button>
                 <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" class="bg-primary"></button>
                 <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3" class="bg-primary"></button>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </section>

@@ -16,9 +16,10 @@ use App\Mail\Replay;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
-})->name('accueil');;
+})->name('accueil');
 Route::get('/conctact', function () {
     return view('contact'); // Assurez-vous que ce fichier de vue existe
 })->name('contact');
