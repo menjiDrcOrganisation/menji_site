@@ -250,13 +250,17 @@
             flex-direction: column;
         }
     }
+    .container{
+        margin-top:200px;
+        Z-index:10000000000;
+    }
 </style>
 
-<div class="container my-5">
-    <div class="form-container">
-        <div class="card shadow-sm card-animated">
+<div class="container my-5 ">
+    <div class="form-container mt-5">
+        <div class="card shadow-sm mt-5 card-animated">
             <div class="card-header">
-                <h3><i class="fas fa-calendar-plus me-2"></i>Faire une demande pour un Événement</h3>
+                <h3><i class="fas fa-calendar-plus mt-5 me-2"></i>Faire une demande pour un Événement</h3>
             </div>
 
             <div class="card-body">
@@ -276,7 +280,15 @@
                                placeholder="Entrez le nom de l'événement">
                         <div class="invalid-feedback">Le nom de l'événement est requis (maximum 255 caractères).</div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="nom_organisateur" class="form-label">
+                            Nom de l'Organisateur <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="nom_organisateur" id="nom_organisateur" class="form-control" 
+                               value="{{ old('nom_organisateur') }}" required maxlength="255"
+                               placeholder="Saisir votre nom">
+                        <div class="invalid-feedback">Votre nom est requis (maximum 255 caractères).</div>
+                    </div>
                     <div class="form-group">
                         <label for="contact_organisateur" class="form-label">
                             Contact de l'Organisateur <span class="text-danger">*</span>
@@ -456,6 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Ajouter les champs avec les noms exacts attendus par l'API
             formData.append('nom_evenement', document.getElementById('nom_evenement').value);
+            formData.append('nom_organisateur', document.getElementById('nom_organisateur').value);
             formData.append('contact_organisateur', document.getElementById('contact_organisateur').value);
             formData.append('description', document.getElementById('description').value);
             formData.append('type_evenement', document.getElementById('type_evenement').value);

@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('nom_evenement', 255);
+            $table->string('nom_organisateur', 255);
             $table->string('contact_organisateur', 255);
             $table->text('description');
             $table->string('type_evenement', 255);

@@ -12,6 +12,7 @@ class EventController extends Controller
         // Validation des données
         $validated = $request->validate([
             'nom_evenement' => 'required|string|max:255',
+            'nom_organisateur' => 'required|string|max:255',
             'contact_organisateur' => 'required|string|max:255',
             'description' => 'required|string',
             'type_evenement' => 'required|string|max:255',
