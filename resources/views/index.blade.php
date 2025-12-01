@@ -655,7 +655,7 @@
 
       <!-- <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt=""> -->
 
-      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100"> -->
+      <!--  -->
 
         <!-- <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">

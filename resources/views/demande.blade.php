@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const afficheFile = document.getElementById('affiche').files[0];
             if (afficheFile) {
                 formData.append('affiche', afficheFile);
-            }
+            } 
 
             const response = await fetch(API_URL, {
                 method: 'POST',
@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirection après succès
                 setTimeout(() => {
                     window.location.href = "{{ url('/') }}";
-                }, 3000);
+                }, 7000);
             } else {
                 let errorMessage = '❌ Une erreur est survenue lors de l\'envoi de la demande.';
                 if (data.errors) {
