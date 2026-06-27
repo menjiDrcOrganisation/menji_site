@@ -1,643 +1,158 @@
-@extends('layout')
-@section('title', 'Menji Drc - A Propos')
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menji DRC | À propos</title>
+    <meta name="description" content="Menji DRC : Experts en solutions digitales en RDC. Développement web, mobile, UI/UX et cybersécurité pour entreprises ambitieuses.">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-@section('content')
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #f48915;
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .hero-section .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section-titles {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        .section-titles h2 {
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            color: var(--primary-color);
-        }
-        
-        .section-titles h2:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background: var(--accent-color);
-            bottom: -10px;
-            left: 25%;
-        }
-        
-        .value-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-            background: white;
-        }
-        
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .value-card:hover .value-icon {
-            transform: scale(1.2);
-        }
-        
-        .mission-vision-box {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 100%;
-            border-left: 4px solid var(--accent-color);
-            transition: transform 0.3s ease;
-        }
-        
-        .mission-vision-box:hover {
-            transform: translateY(-5px);
-        }
-        
-        .team-cta {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .team-cta::before {
-            content: "";
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(231, 76, 60, 0.1);
-            border-radius: 50%;
-        }
-        
-        .img-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        
-        .img-container:hover {
-            transform: scale(1.02);
-        }
-        .haut{
-            padding-top: 100px;
-            margin: 0 auto;
-            text-align: center;
-
-        }
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 100px 0;
-            }
-            
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-
-
-           .team-carousel {
-        position: relative;
-    }
-    
-    .team-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    .team-img-container {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .team-img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 5px solid #f8f9fa;
-        border-radius: 50%;
-    }
-    
-    .team-social a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background: #f8f9fa;
-        color: var(--primary-color);
-        border-radius: 50%;
-        margin: 0 5px;
-        transition: all 0.3s ease;
-    }
-    
-    .team-social a:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-3px);
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: auto;
-    }
-    
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-size: 60%;
-    }
-    
-    @media (max-width: 768px) {
-        .team-img-container {
-            width: 150px;
-            height: 150px;
-        }
-        
-        .team-card {
-            padding: 20px;
-        }
-    }
-    </style>
-
-    <!-- Hero Section avec image de fond -->
-    <section class="hero-section">
-        <div class="container haut">
-            <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Qui sommes-nous ?</h1>
-            <p class="lead fs-4 animate__animated animate__fadeInUp">Menji DRC - Innovation Technologique au Cœur de l'Afrique</p>
+    <header class="oc-navbar">
+        <div class="container nav-container">
+            <div class="logo">MENJI<span>DRC</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ route('accueil') }}">Accueil</a></li>
+                    <li><a href="{{ route('apropos') }}">À propos</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('realisations') }}">Nos réalisations</a></li>
+                </ul>
+            </nav>
+            {{-- <a href="{{ route('demande') }}" class="btn-primary">Demander un devis</a> --}}
         </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                             alt="Équipe Menji DRC" class="img-fluid">
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <span class="badge">Notre Histoire</span>
+                <h1>L'innovation au cœur de la <span class="highlight">RDC</span>.</h1>
+                <p class="subtitle">Menji DRC est née d'une ambition simple : combler le fossé technologique en offrant aux entreprises congolaises des solutions digitales de standard international.</p>
+            </div>
+        </section>
+
+        <section class="vision-mission container">
+            <div class="oc-grid-2">
+                <div class="vision-card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h2>Notre Vision</h2>
+                    <p>Devenir le moteur de la souveraineté numérique en Afrique Centrale en propulsant les PME locales grâce à des infrastructures sécurisées et intelligentes.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h2>Notre Mission</h2>
+                    <p>Accompagner chaque client dans sa transformation digitale par un conseil stratégique, un développement d'excellence et une cybersécurité sans faille.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-bar">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">+50</span>
+                    <span class="stat-label">Projets livrés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Clients satisfaits</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Technique</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Sécurité Garantie</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section container">
+            <h2 class="section-title">Rencontrez nos experts</h2>
+            <p class="text-center">Une équipe pluridisciplinaire d'ingénieurs et de designers passionnés par l'impact technologique.</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Ingenieur+Directeur&background=7451eb&color=fff" alt="CEO">
+                    </div>
+                    <h3>Jonathan Menji</h3>
+                    <p class="role">Lead Développeur & Visionnaire</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Notre Histoire</h2>
-                    <p class="lead ico">Des solutions digitales sur mesure pour l'Afrique et au-delà</p>
-                    <p>Fondée en 2021 par des experts en technologie digitale, Menji DRC est née de la passion pour l'innovation et la transformation numérique en République Démocratique du Congo.</p>
-                    <p>Nous combinons expertise technique et créativité pour offrir des solutions sur mesure qui répondent aux défis spécifiques du marché africain tout en répondant aux standards internationaux.</p>
-                    <p>Notre équipe est composée de professionnels passionnés, engagés à fournir des services de haute qualité dans les domaines du développement web, mobile, cloud computing et cybersécurité.</p>
-                    <p>Nous croyons fermement que la technologie peut être un levier puissant pour le développement économique et social de l'Afrique. C'est pourquoi nous nous engageons à accompagner les entreprises et les institutions dans leur transformation digitale, en mettant l'accent sur la sécurité, l'innovation et la proximité avec nos clients.</p>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Expert+Cyber&background=34a853&color=fff" alt="CTO">
                     </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    {{-- <section class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="section-titles text-center">
-                <h2>Notre ADN</h2>
-                <p class="lead">Ce qui nous motive et nous guide au quotidien</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-bullseye value-icon"></i>
-                        <h3 class="fw-bold">Notre Mission</h3>
-                        <p class="fs-5">Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
-                        <p>Nous nous engageons à fournir des produits qui allient performance technique et design exceptionnel, tout en respectant les délais et budgets impartis.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Solutions personnalisées</li>
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Approche centrée utilisateur</li>
-                            <li><i class="bi bi-check-circle text-success me-2"></i> Sécurité intégrée dès la conception</li>
-                        </ul>
+                    <h3>Sarah Kalala</h3>
+                    <p class="role">Experte en Cybersécurité</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                
-                <div class="col-md-6">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-eye value-icon"></i>
-                        <h3 class="fw-bold">Notre Vision</h3>
-                        <p class="fs-5">Devenir une référence africaine dans l'innovation technologique.</p>
-                        <p>Nous aspirons à être les pionniers de la tech en RDC et dans toute l'Afrique, en mettant l'intelligence et la créativité au service de la transformation numérique du continent.</p>
-                        <div class="bg-primary-light p-3 rounded mt-4">
-                            <h4 class="h5 text-white">Notre ambition</h4>
-                            <p class="text-white mb-0">"Être le catalyseur de la révolution digitale en Afrique centrale d'ici 2030"</p>
-                        </div>
-                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="oc-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-info">
+                <div class="logo">MENJI<span>DRC</span></div>
+                <p>Leader de la transformation digitale en RDC. Nous accompagnons les entreprises dans l'adoption des technologies de demain.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nos Solutions</h4>
+                <ul>
+                    <li><a href="{{ route('accueil') }}#services">Développement Web</a></li>
+                    <li><a href="{{ route('accueil') }}#services">Applications Mobiles</a></li>
+                    <li><a href="{{ route('accueil') }}#services">Cybersécurité</a></li>
+                    <li><a href="{{ route('accueil') }}#services">Cloud Computing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Menji DRC</h4>
+                <ul>
+                    <li><a href="{{ route('apropos') }}">Notre Vision</a></li>
+                    <li><a href="{{ route('apropos') }}">L'Équipe</a></li>
+                    {{-- <li><a href="{{ route('blog.index') }}">Études de cas</a></li> --}}
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ressources</h4>
+                <ul>
+                    {{-- <li><a href="{{ route('blog.index') }}">Blog Expertise</a></li> --}}
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="https://wa.me/243XXXXXXXXX">Assistance Directe</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2026 MENJI DRC. Tous droits réservés. Kinshasa, République Démocratique du Congo.</p>
+                <div class="lang-selector">
+                    <span><i class="fas fa-globe"></i> Français (RDC)</span>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </footer>
 
-<section id="services" class="services section pourquoi-menji-section bg-border pourquoi-menji-sections">
-
-      <!-- Section Title -->
-      <div class="container section-title text-center" data-aos="fade-up">
-          <h2>Notre ADN</h2>
-          <p class="lead">Ce qui nous motive et nous guide au quotidien</p> 
-      </div>  
-      {{-- !-- End Section Title --> --}}
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row">
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-bullseye"></i>
-                </div>
-                  <h3  class="stretched-link">Notre Mission</h3>
-                  <p >Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
-                        <p>Nous nous engageons à fournir des produits qui allient performance technique et design exceptionnel, tout en respectant les délais et budgets impartis.</p>
-                        {{-- <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Solutions personnalisées</li>
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Approche centrée utilisateur</li>
-                            <li><i class="bi bi-check-circle text-success me-2"></i> Sécurité intégrée dès la conception</li>
-                        </ul> --}}
-                </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-eye"></i>
-                </div>
-                  <h3  class="stretched-link">Notre Vision</h3>
-                <p >Devenir une référence africaine dans l'innovation technologique.</p>
-                        <p>Nous aspirons à être les pionniers de la tech en RDC et dans toute l'Afrique, en mettant l'intelligence et la créativité au service de la transformation numérique du continent.</p>
-              <br>
-                    </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-bullseye"></i>
-                </div>
-                  <h3  class="stretched-link">Notre Mission</h3>
-                  <p >Accompagner les entreprises et les particuliers dans la création de solutions numériques fiables, esthétiques et sécurisées.</p>
-                        <p>Nous nous engageons à fournir des produits qui allient performance technique et design exceptionnel, tout en respectant les délais et budgets impartis.</p>
-                        {{-- <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Solutions personnalisées</li>
-                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Approche centrée utilisateur</li>
-                            <li><i class="bi bi-check-circle text-success me-2"></i> Sécurité intégrée dès la conception</li>
-                        </ul> --}}
-                </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-eye"></i>
-                </div>
-                  <h3  class="stretched-link">Notre Vision</h3>
-                <p >Devenir une référence africaine dans l'innovation technologique.</p>
-                        <p>Nous aspirons à être les pionniers de la tech en RDC et dans toute l'Afrique, en mettant l'intelligence et la créativité au service de la transformation numérique du continent.</p>
-              <br>
-                    </div>
-            </div>
-          </div><!-- End Service Item -->
-        </div>
-
-      </div>
-
-</section>
-    <!-- Our Values -->
-    {{-- <section class="py-5">
-        <div class="container py-5">
-            <div class="section-titles text-center">
-                <h2>Nos Valeurs Fondamentales</h2>
-                <p class="lead">Les principes qui guident chacune de nos actions</p>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Sécurité -->
-                <div class="col-md-4">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-shield-lock value-icon"></i>
-                        <h3>Sécurité</h3>
-                        <p>Nous priorisons la protection des données et systèmes de nos clients à chaque étape de nos développements, avec des protocoles rigoureux.</p>
-                    </div>
-                </div>
-                
-                <!-- Créativité -->
-                <div class="col-md-4">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-lightbulb value-icon"></i>
-                        <h3>Créativité</h3>
-                        <p>Nous repoussons les limites conventionnelles pour offrir des solutions uniques et innovantes, adaptées aux contextes locaux.</p>
-                    </div>
-                </div>
-                
-                <!-- Proximité -->
-                <div class="col-md-4">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-people value-icon"></i>
-                        <h3>Proximité</h3>
-                        <p>Une écoute active et un accompagnement personnalisé pour chaque client, avec une équipe disponible et réactive.</p>
-                    </div>
-                </div>
-                
-                <!-- Innovation -->
-                <div class="col-md-6">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-cpu value-icon"></i>
-                        <h3>Innovation</h3>
-                        <p>Adoption des technologies émergentes pour des solutions à la pointe du progrès, tout en restant accessibles.</p>
-                    </div>
-                </div>
-                
-                <!-- Professionnalisme -->
-                <div class="col-md-6">
-                    <div class="value-card text-center p-4">
-                        <i class="bi bi-award value-icon"></i>
-                        <h3>Professionnalisme</h3>
-                        <p>Exigence de qualité, respect des délais et éthique professionnelle irréprochable dans toutes nos interventions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-    <section id="services" class="services section pourquoi-menji-section pourquoi-menji-sections bg-border">
-
-      <!-- Section Title -->
-      <div class="container section-title text-center" data-aos="fade-up">
-          <h2>Nos Valeurs Fondamentales</h2>
-          <p class="lead">Les principes qui guident chacune de nos actions</p> 
-      </div>  
-      {{-- !-- End Section Title --> --}}
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row">
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-shield-lock"></i>
-                </div>
-                  <h3  class="stretched-link">Sécurité</h3>
-                  <p>Nous priorisons la protection des données et systèmes de nos clients à chaque étape de nos développements, avec des protocoles rigoureux.</p>
-                </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-lightbulb"></i>
-                </div>
-                  <h3  class="stretched-link">Créativité</h3>
-                <p>Nous repoussons les limites conventionnelles pour offrir des solutions uniques et innovantes, adaptées aux contextes locaux.</p>
-                </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/téléchargement.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-cpu"></i>
-                </div>
-                  <h3  class="stretched-link">Innovation</h3>
-                  <p>Adoption des technologies émergentes pour des solutions à la pointe du progrès, tout en restant accessibles.</p>
-                    </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 pn" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                {{-- <img src="assets/img/Voici.jpeg" class="img-fluid" alt=""> --}}
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-award"></i>
-                </div>
-                  <h3  class="stretched-link">Professionnalisme</h3>
-                <p>Exigence de qualité, respect des délais et éthique professionnelle irréprochable dans toutes nos interventions.</p>
-                    <br>
-            </div>
-            </div>
-          </div><!-- End Service Item -->
-        </div>
-
-      </div>
-
-</section> 
-
-
-    <!-- Team CTA -->
-   <!-- <section class="team-carousel py-5 bg-light pourquoi-menji-sections">
-    <div class="container py-5">
-        <div class="section-title text-center mb-5">
-            <h2>Notre Équipe d'Experts</h2>
-            <p class="lead">Découvrez les talents derrière Menji DRC</p>
-        </div>
-
-        <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"> -->
-                <!-- Slide 1 -->
-                <!-- <div class="carousel-item active">
-                    <div class="row justify-content-center"> -->
-                        <!-- Membre 1 -->
-                        <!-- <div class="col-lg-4">
-                            <div class="team-card text-center mx-auto">
-                                <div class="team-img-container">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
-                                         alt="Directeur Technique" class="img-fluid rounded-circle">
-                                </div>
-                                <h3 class="mt-4 mb-1">Patrick Mboma</h3>
-                                <p class="text-primary fw-bold">Directeur Technique</p>
-                                <p class="text-muted">Expert en sécurité cloud</p>
-                                <div class="team-social mt-3">
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#"><i class="bi bi-twitter"></i></a>
-                                    <a href="#"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Slide 2 -->
-                <!-- <div class="carousel-item">
-                    <div class="row justify-content-center"> -->
-                        <!-- Membre 2 -->
-                        <!-- <div class="col-lg-4">
-                            <div class="team-card text-center mx-auto">
-                                <div class="team-img-container">
-                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
-                                         alt="Lead Designer" class="img-fluid rounded-circle">
-                                </div>
-                                <h3 class="mt-4 mb-1">Sarah Kayembe</h3>
-                                <p class="text-primary fw-bold">Lead Designer UI/UX</p>
-                                <p class="text-muted">Spécialiste en expérience utilisateur</p>
-                                <div class="team-social mt-3">
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#"><i class="bi bi-dribbble"></i></a>
-                                    <a href="#"><i class="bi bi-behance"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Slide 3 -->
-                <!-- <div class="carousel-item">
-                    <div class="row justify-content-center"> -->
-                        <!-- Membre 3 -->
-                        <!-- <div class="col-lg-4">
-                            <div class="team-card text-center mx-auto">
-                                <div class="team-img-container">
-                                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
-                                         alt="Développeur Fullstack" class="img-fluid rounded-circle">
-                                </div>
-                                <h3 class="mt-4 mb-1">David Kabasele</h3>
-                                <p class="text-primary fw-bold">Développeur Fullstack</p>
-                                <p class="text-muted">Expert JavaScript</p>
-                                <div class="team-social mt-3">
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#"><i class="bi bi-stack-overflow"></i></a>
-                                    <a href="#"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Slide 4 -->
-                <!-- <div class="carousel-item">
-                    <div class="row justify-content-center"> -->
-                        <!-- Membre 4 -->
-                        <!-- <div class="col-lg-4">
-                            <div class="team-card text-center mx-auto">
-                                <div class="team-img-container">
-                                    <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
-                                         alt="Responsable Sécurité" class="img-fluid rounded-circle">
-                                </div>
-                                <h3 class="mt-4 mb-1">Rachel Tshibangu</h3>
-                                <p class="text-primary fw-bold">Responsable Cybersécurité</p>
-                                <p class="text-muted">Spécialiste en pentesting</p>
-                                <div class="team-social mt-3">
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#"><i class="bi bi-shield-lock"></i></a>
-                                    <a href="#"><i class="bi bi-git"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Contrôles du carrousel -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Précédent</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Suivant</span>
-            </button> -->
-
-            <!-- Indicateurs -->
-            <!-- <div class="carousel-indicators position-relative mt-4">
-                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true"></button>
-                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" class="bg-primary"></button>
-                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2" class="bg-primary"></button>
-                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3" class="bg-primary"></button>
-            </div>
-        </div> -->
-
-    </div>
-</section>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script>
-        // Animation au scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.value-card, .mission-vision-box');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animateElements.forEach(el => observer.observe(el));
-        });
-    </script>
-
-@endsection
+    <script src="{{ asset('script.js') }}"></script>
+</body>
+</html>

@@ -20,16 +20,22 @@ use App\Mail\Replay;
 Route::get('/', function () {
     return view('index');
 })->name('accueil');
-Route::get('/conctact', function () {
-    return view('contact'); // Assurez-vous que ce fichier de vue existe
+Route::get('/contact', function () {
+    return view('contact');
 })->name('contact');
 Route::get('/demande', function () {
-    return view('demande'); // Assurez-vous que ce fichier de vue existe
+    return view('demande');
 })->name('demande');
 Route::post('/contact', [PostController::class, 'submit'])->name('contact.submit');
 Route::get('/apropos', function () {
-    return view('apropos'); // Assurez-vous que ce fichier de vue existe
+    return view('apropos');
 })->name('apropos');
+Route::get('/realisations', function () {
+    return view('realisations');
+})->name('realisations');
+Route::get('/expertise', function () {
+    return view('expertise');
+})->name('expertise');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,201 +1,98 @@
-@extends('layout')
-@section('title', 'Menji Drc - Contact')
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Audit Gratuit | Menji DRC</title>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-@section('content')
-<div class="contact-container  pourquoi-menji-sectionT">
-    <!-- Flash Message Container -->
-    <div id="flashMessageContainer"></div>
-
-    <div class="contact-card">
-        <div class="section-title">
-            <h2>Envoyez-nous un message</h2>
-            <p>Remplissez ce formulaire et nous vous répondrons dans les plus brefs délais</p>
+    <header class="oc-navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="{{ route('accueil') }}">MENJI<span>DRC</span></a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ route('accueil') }}">Accueil</a></li>
+                    <li><a href="{{ route('apropos') }}">À propos</a></li>
+                    <li><a href="{{ route('realisations') }}">Nos réalisations</a></li>
+                    <li><a href="{{ route('contact') }}" class="active-link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/243810000000" class="btn-primary">WhatsApp Direct</a>
         </div>
-        
-        <form action="{{ route('contact.submit') }}" method="POST" id="contactForm">
-            @csrf
-        
-            <div class="row">
-                <div class="col-md-6">
-                    <input type="text" class="form-control" name="name" placeholder="Votre nom complet" value="{{ old('name') }}" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="email" class="form-control" name="email" placeholder="Votre adresse email" value="{{ old('email') }}" required>
+    </header>
+
+    <main class="container contact-page">
+        @if (session('success'))
+            <div class="oc-form-box" style="margin-bottom: 20px;">
+                <strong>Message envoyé</strong>
+                <p style="margin-top: 8px;">{{ session('success') }}</p>
+            </div>
+        @endif
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span class="badge">Audit gratuit sous 24h</span>
+                <h1>Prêt à passer au <span class="highlight">niveau supérieur</span> pour votre entreprise ?</h1>
+                <p>Discutons de vos besoins et recevez un audit digital complet pour votre entreprise.</p>
+
+                <div class="info-details">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>contact@menjidrc.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <strong>Bureau</strong>
+                            <p>Gombe, Kinshasa, RDC</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <input type="text" class="form-control" name="subject" placeholder="Sujet de votre message" value="{{ old('subject') }}">
-            
-            <select class="form-control" name="service" required>
-                <option value="" disabled selected>Service concerné</option>
-                <option value="Développement Web" {{ old('service') == 'Développement Web' ? 'selected' : '' }}>Développement Web</option>
-                <option value="Sécurité Informatique" {{ old('service') == 'Sécurité Informatique' ? 'selected' : '' }}>Sécurité Informatique</option>
-                <option value="Solutions Cloud" {{ old('service') == 'Solutions Cloud' ? 'selected' : '' }}>Solutions Cloud</option>
-                <option value="UI/UX Design" {{ old('service') == 'UI/UX Design' ? 'selected' : '' }}>UI/UX Design</option>
-                <option value="Consultation" {{ old('service') == 'Consultation' ? 'selected' : '' }}>Consultation</option>
-                <option value="Autre" {{ old('service') == 'Autre' ? 'selected' : '' }}>Autre demande</option>
-            </select>
-            
-            <textarea class="form-control" name="message" rows="6" placeholder="Décrivez votre projet ou demande..." required>{{ old('message') }}</textarea>
-            
-            <div class="form-footer">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="consentCheck" name="consent" {{ old('consent') ? 'checked' : '' }} required>
-                    <label class="form-check-label" for="consentCheck">
-                        J'accepte la politique de confidentialité
+
+            <div class="contact-form-container">
+                <form class="oc-form-box" action="{{ route('contact.submit') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label>Votre Nom ou Entreprise</label>
+                        <input type="text" name="name" placeholder="Ex: Jean Mukendi" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email de contact</label>
+                        <input type="email" name="email" placeholder="nom@entreprise.cd" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Service souhaité</label>
+                        <input type="text" name="service" placeholder="Ex: Développement web" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Quel est votre défi actuel ?</label>
+                        <textarea name="message" rows="4" placeholder="Ex: Sécuriser mes données, créer une application..." minlength="10" required></textarea>
+                    </div>
+                    <input type="hidden" name="subject" value="Demande de contact depuis la page Contact">
+                    <label>
+                        <input type="checkbox" name="consent" value="1" required>
+                        J'accepte d'être recontacté par Menji DRC.
                     </label>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submitBtn">
-                    <i class="bi bi-send-fill me-2"></i> Envoyer
-                </button>
+                    <button type="submit" class="btn-submit">Obtenir mon audit gratuit <i class="fas fa-arrow-right"></i></button>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
+    </main>
 
-<style>
-    :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #f48915;
-        --light-color: #f8f9fa;
-    }
-    
-    .contact-container {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        margin-top: 100px;
-    }
-    
-    .contact-card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        padding: 2.5rem;
-        margin-top: 2rem;
-    }
-    
-    .section-title {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    
-    .section-title h2 {
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-    }
-    
-    .section-title p {
-        color: #666;
-    }
-    
-    .form-control {
-        width: 100%;
-        padding: 0.875rem 1rem;
-        margin-bottom: 1.25rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-    
-    .form-control:focus {
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    }
-    
-    .form-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1.5rem;
-    }
-    
-    .btn-primary {
-        background-color: var(--accent-color);
-        border: none;
-        padding: 0.75rem 1.75rem;
-        border-radius: 8px;
-        color: white;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-primary:hover {
-        background-color: #e07b0c;
-        transform: translateY(-2px);
-    }
-    
-    #flashMessageContainer {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-    
-    .alert {
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-    
-    .alert.fade-out {
-        opacity: 0;
-    }
-    
-    @media (max-width: 768px) {
-        .contact-card {
-            padding: 1.5rem;
-        }
-        
-        .form-footer {
-            flex-direction: column;
-            gap: 1rem;
-        }
-    }
-</style>
+    <footer class="oc-footer">
+        <div class="container">
+            <p>&copy; 2026 Menji DRC. Innovation digitale à Kinshasa.</p>
+        </div>
+    </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Gestion des messages flash
-    @if(session('success'))
-        showFlashMessage("{{ session('success') }}", 'success');
-    @endif
-
-    @if($errors->any())
-        showFlashMessage("{{ implode(' ', $errors->all()) }}", 'danger');
-    @endif
-
-    // Gestion du formulaire
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            const submitBtn = document.getElementById('submitBtn');
-            if (submitBtn) {
-                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Envoi en cours...';
-                submitBtn.disabled = true;
-            }
-        });
-    }
-});
-
-function showFlashMessage(message, type) {
-    const container = document.getElementById('flashMessageContainer');
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type} alert-dismissible fade show`;
-    alert.role = 'alert';
-    alert.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-    
-    container.appendChild(alert);
-    
-    // Fermer automatiquement après 3 secondes
-    setTimeout(() => {
-        alert.classList.add('fade-out');
-        setTimeout(() => alert.remove(), 500);
-    }, 3000);
-}
-</script>
-@endsection
+    <script src="{{ asset('script.js') }}"></script>
+</body>
+</html>
