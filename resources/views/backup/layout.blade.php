@@ -11,7 +11,6 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-<!-- Favicons -->
   <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="icon">
   <link href="{{ asset('assets/img/Logo_menji.png') }}" rel="apple-touch-icon"> 
 
@@ -19,9 +18,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> --}}
+
   <!-- Vendor CSS Files -->
   <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -32,6 +29,53 @@
   <!-- Main CSS File -->
   <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
+  <style>
+    /* Styles pour le dropdown des services */
+    .navmenu .dropdown {
+      position: relative;
+    }
+
+    .navmenu .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+    }
+
+    .navmenu .dropdown-content li {
+      list-style: none;
+      margin: 0;
+    }
+
+    .navmenu .dropdown-content a {
+      display: block;
+      padding: 8px 20px;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .navmenu .dropdown-content a:hover {
+      background: #f8f9fa;
+      color: #007bff;
+    }
+
+    .navmenu .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Style pour le lien actif */
+    .navmenu a.active {
+      /* color: #007bff !important; */
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,58 +83,44 @@
   <header id="header" class="header d-flex align-items-center fixed-top bg-light">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{ asset('assets/img/Logo_menji.png') }}"alt=""> 
-        {{-- <h1 class="sitename">Menjidrc</h1> --}}
+      <a href="{{ route('accueil') }}" class="logo d-flex align-items-center me-auto">
+        <img src="{{ asset('assets/img/Logo_menji.png') }}" alt=""> 
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{ route('accueil') }}" class="active">Accueil</a></li>
-          <li><a href="{{ route('apropos') }}">A propos</a></li>
-          <li><a href=" ">Services</a></li>
-          <li><a href="{{ route('blog.index') }}">Blog</a></li>
-          {{-- <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+          <li><a href="{{ route('accueil') }}" data-page="accueil">Accueil</a></li>
+          <li><a href="{{ route('apropos') }}" data-page="apropos">A propos</a></li>
+          <li class="dropdown">
+            <a href="#" data-page="services">Services <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#">Développement Mobile</a></li>
+              <li><a href="#">Développement Web</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Sécurité Informatique</a></li>
+              <li><a href="#">Cloud Computing</a></li>
             </ul>
-          </li> --}}
-          <li><a href="{{ route('contact') }}">Contact</a></li>
+          </li>
+          <li><a href="{{ route('blog.index') }}" data-page="blog">Blog</a></li>
+          <li><a href="{{ route('contact') }}" data-page="contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      {{-- <a class="cta-btn" href="index.html#about">Se connecter</a> --}}
-
     </div>
   </header>
-@yield('content')
-  <footer id="footer" class="footer dark-background">
 
+  @yield('content')
+
+  <footer id="footer" class="footer dark-background">
+    <!-- Votre footer reste inchangé -->
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src={{ asset('assets/img/Logo_menjid.png') }} alt="">
-            {{-- <span class="sitename">Dewi</span> --}}
+          <a href="{{ route('accueil') }}" class="logo d-flex align-items-center">
+            <img src="{{ asset('assets/img/Logo_menjid.png') }}" alt="">
           </a>
           <div class="footer-contact pt-3">
-            {{-- <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p> --}}
             <p class="mt-3"><strong>Phone:</strong> <span>+243 893 572 418 </span></p>
             <p><strong>Email:</strong> <span>menjidrc@menjidrc.com</span></p>
           </div>
@@ -116,42 +146,33 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Nos Services</h4>
           <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Mobile</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Web</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">UI/UX Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Sécurité Informatique</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Cloud Computing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Mobile</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Développement Web</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">UI/UX Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Sécurité Informatique</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Cloud Computing</a></li>
           </ul>
         </div>
 
-       <div class="col-lg-4 col-md-12 footer-newsletter">
-    <h4>Notre Newsletter</h4>
-    <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités sur nos produits et services !</p>
-    <form action="forms/newsletter.php" method="post" class="php-email-form">
-        <div class="newsletter-form">
-            <input type="email" name="email" placeholder="Votre email">
-            <input type="submit" value="S'abonner">
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Notre Newsletter</h4>
+          <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités sur nos produits et services !</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form">
+              <input type="email" name="email" placeholder="Votre email">
+              <input type="submit" value="S'abonner">
+            </div>
+            <div class="loading">Envoi en cours...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Votre demande d'abonnement a bien été envoyée. Merci !</div>
+          </form>
         </div>
-        <div class="loading">Envoi en cours...</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Votre demande d'abonnement a bien été envoyée. Merci !</div>
-    </form>
-</div>
-
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Menji Drc</strong> <span>Tous droits réservés.</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-      </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -161,18 +182,17 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
-
 </html>

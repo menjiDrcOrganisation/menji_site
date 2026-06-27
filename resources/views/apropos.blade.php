@@ -149,6 +149,24 @@
                 <div class="lang-selector">
                     <span><i class="fas fa-globe"></i> Français (RDC)</span>
                 </div>
+
+                <!-- Expertise -->
+                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="adn-card">
+                        <div class="adn-icon-wrapper">
+                            <i class="bi bi-gear adn-icon"></i>
+                            <div class="adn-badge">Expertise</div>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Notre Expertise</h3>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="bi bi-code-slash me-2"></i> Développement sur mesure</li>
+                            <li class="mb-2"><i class="bi bi-palette me-2"></i> UX/UI Design innovant</li>
+                            <li class="mb-2"><i class="bi bi-shield-lock me-2"></i> Cybersécurité intégrée</li>
+                            <li class="mb-2"><i class="bi bi-phone me-2"></i> Solutions mobiles</li>
+                            <li><i class="bi bi-cloud me-2"></i> Infrastructure Cloud</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

@@ -1322,7 +1322,7 @@ section,
 --------------------------------------------------------------*/
 .services-2 .service-item {
   background-color: var(--surface-color);
-  padding: 30px;
+  padding: 0px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   transition: 0.3s;
 }

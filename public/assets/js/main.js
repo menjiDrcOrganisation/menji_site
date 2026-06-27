@@ -1,11 +1,3 @@
-/**
-* Template Name: Dewi
-* Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -16,7 +8,6 @@
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     
-    // Vérification de l'existence des éléments
     if (!selectHeader || !selectBody) return;
     
     if (!selectHeader.classList.contains('scroll-up-sticky') && 
@@ -26,7 +17,6 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  // Événements de scroll optimisés avec debounce
   let scrollTimeout;
   function handleScroll() {
     if (scrollTimeout) {
@@ -68,23 +58,105 @@
   });
 
   /**
-   * Toggle mobile nav dropdowns
+   * Gestion du menu actif amélioré
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const parent = this.parentNode;
-      const nextSibling = parent.nextElementSibling;
-      
-      if (parent && nextSibling) {
-        parent.classList.toggle('active');
-        nextSibling.classList.toggle('dropdown-active');
-      }
-      
-      e.stopImmediatePropagation();
+  function initActiveMenu() {
+    const navLinks = document.querySelectorAll('#navmenu a[data-page]');
+    const currentPath = window.location.pathname;
+    
+    // Fonction pour déterminer la page actuelle
+    function getCurrentPage() {
+      if (currentPath.includes('blog')) return 'blog';
+      if (currentPath.includes('apropos')) return 'apropos';
+      if (currentPath.includes('contact')) return 'contact';
+      if (currentPath === '/' || currentPath.includes('accueil')) return 'accueil';
+      return 'accueil'; // page par défaut
+    }
+    
+    const currentPage = getCurrentPage();
+    
+    // Retirer la classe active de tous les liens
+    navLinks.forEach(link => {
+      link.classList.remove('active');
     });
-  });
+    
+    // Ajouter la classe active au lien correspondant
+    const activeLink = document.querySelector(`#navmenu a[data-page="${currentPage}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+    
+    // Gestion du click sur les liens
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Si c'est le lien Services (dropdown), on ne change pas l'état actif
+        if (this.getAttribute('data-page') === 'services' && this.getAttribute('href') === '#') {
+          e.preventDefault();
+          return;
+        }
+        
+        // Retirer active de tous les liens
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Ajouter active au lien cliqué
+        this.classList.add('active');
+        
+        // Stocker l'état dans sessionStorage pour persistance
+        sessionStorage.setItem('activeMenu', this.getAttribute('data-page'));
+      });
+    });
+    
+    // Restaurer l'état du menu depuis sessionStorage
+    const savedActiveMenu = sessionStorage.getItem('activeMenu');
+    if (savedActiveMenu && savedActiveMenu !== currentPage) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const savedLink = document.querySelector(`#navmenu a[data-page="${savedActiveMenu}"]`);
+      if (savedLink) {
+        savedLink.classList.add('active');
+      }
+    }
+  }
+
+  /**
+   * Gestion du dropdown des services
+   */
+  function initServicesDropdown() {
+    const servicesDropdown = document.querySelector('.navmenu .dropdown');
+    
+    if (servicesDropdown) {
+      const dropdownContent = servicesDropdown.querySelector('.dropdown-content');
+      
+      // Survol pour desktop
+      servicesDropdown.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 992) { // Desktop seulement
+          dropdownContent.style.display = 'block';
+        }
+      });
+      
+      servicesDropdown.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 992) {
+          dropdownContent.style.display = 'none';
+        }
+      });
+      
+      // Click pour mobile
+      const servicesLink = servicesDropdown.querySelector('a[data-page="services"]');
+      servicesLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 992) { // Mobile seulement
+          e.preventDefault();
+          dropdownContent.style.display = 
+            dropdownContent.style.display === 'block' ? 'none' : 'block';
+        }
+      });
+      
+      // Fermer le dropdown en cliquant ailleurs
+      document.addEventListener('click', function(e) {
+        if (!servicesDropdown.contains(e.target)) {
+          dropdownContent.style.display = 'none';
+        }
+      });
+    }
+  }
 
   /**
    * Preloader
@@ -92,7 +164,6 @@
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      // Ajout d'un délai pour une transition fluide
       setTimeout(() => {
         preloader.remove();
       }, 500);
@@ -121,7 +192,7 @@
   }
 
   window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', handleScroll); // Réutilise la fonction debounce
+  document.addEventListener('scroll', handleScroll);
 
   /**
    * Animation on scroll function and init
@@ -138,7 +209,6 @@
     }
   }
   
-  // Attendre que le DOM soit complètement chargé
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', aosInit);
   } else {
@@ -184,26 +254,9 @@
       
       try {
         let config = JSON.parse(swiperConfig.innerHTML.trim());
-
-        if (swiperElement.classList.contains("swiper-tab")) {
-          initSwiperWithCustomPagination(swiperElement, config);
-        } else {
-          new Swiper(swiperElement, config);
-        }
+        new Swiper(swiperElement, config);
       } catch (error) {
         console.error('Erreur parsing Swiper config:', error);
-      }
-    });
-  }
-
-  function initSwiperWithCustomPagination(swiperElement, config) {
-    // Implémentation de base pour la pagination personnalisée
-    // À adapter selon vos besoins spécifiques
-    const swiper = new Swiper(swiperElement, {
-      ...config,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
       }
     });
   }
@@ -235,7 +288,6 @@
         });
       });
 
-      // Gestion des filtres
       const filterElements = isotopeItem.querySelectorAll('.isotope-filters li');
       filterElements.forEach(function(filterElement) {
         filterElement.addEventListener('click', function() {
@@ -250,7 +302,6 @@
               filter: this.getAttribute('data-filter') || '*'
             });
             
-            // Réinitialiser AOS après réorganisation
             if (typeof AOS !== 'undefined') {
               AOS.refresh();
             }
@@ -285,45 +336,19 @@
   window.addEventListener('load', handleHashScroll);
 
   /**
-   * Navmenu Scrollspy
+   * Initialisation générale
    */
-  function initScrollspy() {
-    const navmenulinks = document.querySelectorAll('.navmenu a');
-    if (navmenulinks.length === 0) return;
-
-    function navmenuScrollspy() {
-      let foundActive = false;
-      
-      navmenulinks.forEach(navmenulink => {
-        if (!navmenulink.hash) return;
-        
-        const section = document.querySelector(navmenulink.hash);
-        if (!section) return;
-        
-        const rect = section.getBoundingClientRect();
-        const position = window.scrollY + 200;
-        
-        // Vérifier si la section est dans la vue
-        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-          if (!foundActive) {
-            // Retirer active de tous les liens
-            document.querySelectorAll('.navmenu a.active').forEach(link => {
-              link.classList.remove('active');
-            });
-            
-            navmenulink.classList.add('active');
-            foundActive = true;
-          }
-        }
-      });
-    }
-
-    window.addEventListener('load', navmenuScrollspy);
-    document.addEventListener('scroll', handleScroll); // Réutilise le debounce
+  function initAll() {
+    initActiveMenu();
+    initServicesDropdown();
   }
 
-  // Initialiser le scrollspy après le chargement
-  window.addEventListener('load', initScrollspy);
+  // Initialiser quand le DOM est prêt
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 
   /**
    * Gestionnaire d'erreurs global
